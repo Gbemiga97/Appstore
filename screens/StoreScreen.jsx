@@ -24,7 +24,7 @@ const StoreScreen = () => {
         {/* categories */}
         <View style={tw`mt-3`}>
             <Text 
-            style={tw`ml-4 text-3xl font-bold`}
+            style={tw`ml-4 text-3xl font-bold text-[#0D163A]`}
             >
                 Browse Games
             </Text>
