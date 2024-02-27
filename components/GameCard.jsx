@@ -1,10 +1,10 @@
 import { LinearGradient } from 'expo-linear-gradient'
 import { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import { HeartIcon } from 'react-native-heroicons/solid'
+import { ArrowDownTrayIcon, HeartIcon } from 'react-native-heroicons/solid'
 import tw from 'twrnc'
 import { storeColors } from '../theme'
-
+import StarRating from 'react-native-star-rating-widget'
 
 
 export default function GameCard({game}) {
@@ -25,8 +25,22 @@ export default function GameCard({game}) {
           <HeartIcon size='25' color={isFavorite ? storeColors.redHeart : 'white'} />
         </TouchableOpacity>
        </View>
-       <View>
+       <View style={tw`gap-y-1`}>
+       <StarRating
+                rating={stars}
+                starSize={20}
+                maxStars={5}
+            />
+            <Text style={tw`text-xl font-bold text-gray-300`}>
+              {title}
+            </Text>
       
+       <View style={tw`flex-row gap-x-2`}>
+        <ArrowDownTrayIcon size='18' color='lightgray' />
+        <Text style={tw`text-sm text-gray-300 font-semibold`}>
+          {downloads} Downloads
+        </Text>
+       </View>
        </View>
       </LinearGradient>
     </View>
