@@ -95,13 +95,17 @@ const [activeCategory, setActiveCategory] = useState('Action')
         </View>
 
         {/* featured row */}
-        <View style={tw`mt-3 space-y-4`}>
+        <View style={tw`mt-3 gap-y-4`}>
           <Text style={tw`text-lg font-bold ml-4 text-[#0D163A]`}>
             Featured Games
           </Text>
           <View style={tw`pl-4`}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            hajja
+            {
+              featuredGames.map((game, i) => (
+                <GameCard key={i} game={game}/>
+              ))
+            }
             </ScrollView>
           </View>
         </View>
